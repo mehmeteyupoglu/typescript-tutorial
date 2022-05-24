@@ -40,3 +40,24 @@ function kgToLbs(weight: number | string): number {
 
 console.log(kgToLbs(10));
 console.log(kgToLbs('10kg'));
+
+type Draggable = {
+    drag: () => void
+}
+
+type Resizable = {
+    resize: () => void
+}
+
+// intersection type
+type UIWidget = Draggable & Resizable
+
+let textBox: UIWidget = {
+    drag: () => {}, 
+    resize: () => {}
+}
+
+
+// Literal (exact, specific)
+type Quantity = 50 | 100;
+let quantity: Quantity = 50;
